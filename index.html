@@ -5,68 +5,65 @@
     <style>
         body {
             font-family: "Noto Sans KR", sans-serif;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            color: #333;
         }
         #title {
-            font-size: 2em;
-            color: #333;
-            margin-top: 20px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #clock {
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
         #meal {
             font-size: 1.2em;
+            margin-bottom: 20px;
             color: #666;
-            margin-top: 10px;
+        }
+        #client-ip {
+            color: #bbb2e9;
+            font-size: 1em;
         }
     </style>
 </head>
 <body>
-    <h1 id="title">오늘의 급식</h1>
+    <h1 id="title">밀알두레학교: 오늘의 급식</h1>
 
-    <style>
-        #client-ip {
-            color: #bbb2e9;
-        }
-        
-        #clock {
-            font-size: 48px; 
-            font-weight: bold;
-        }
-    </style>
-    
-    <div><span id="client-ip"></span> 님, 방문하신 걸 환영합니다.</div>
-    
+    <h2 id="clock"></h2>
+
+    <p id="meal"></p>
+
+    <p id="client-ip"></p>
+
     <script>
+        // IP 정보 가져오기
         const se = document.createElement('script');
         se.src = 'https://ipinfo.io?callback=callback';
-        
         document.body.appendChild(se);
         document.body.removeChild(se);
-        
+
         function callback(data) {
-            document.getElementById('client-ip').textContent = data.ip;
+            document.getElementById('client-ip').textContent = data.ip + ' 님, 방문하신 걸 환영합니다.';
         }
-    </script>
-    <br/><br/>
-    
-    <script>
+
+        // 시계 기능
         setInterval(function(){
-            
             var timer = new Date();
             var h = timer.getHours();
             var m = timer.getMinutes();
             var s = timer.getSeconds();
             document.getElementById('clock').innerHTML = h + "시" + m + "분" + s + "초";
         },1000);
-    </script>
-    
-    <h1 id="clock"></h1>
-    
-    <p id="meal"></p>
 
-    <script>
+        // 급식 정보 표시
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); 
