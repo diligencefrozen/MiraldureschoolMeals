@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>밀알두레학교 급식 정보</title>
+    <title>밀알두레학교: 오늘의 급식</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        #title {
+            font-size: 2em;
+            color: #333;
+            margin-top: 20px;
+        }
+        #meal {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <script src="date-based-navigation.js"></script>
+    <h1 id="title">밀알두레학교: 오늘의 급식</h1>
+    <p id="meal"></p>
+
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        var yyyy = today.getFullYear();
+        
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        var mealList = {
+            '2024-02-01': '김치찌개, 쌀밥, 계란말이, 오이무침, 바나나',
+            '2024-02-02': '무국, 쌀밥, 돈육떡강정, 브로콜리무침',
+            // 여기에 다른 날짜와 급식 정보를 추가하세요
+        };
+        
+        var meal = mealList[today];
+        
+        if (meal) {
+            document.getElementById('meal').innerText = meal;
+        } else {
+            document.getElementById('meal').innerText = '급식 없음';
+        }
+    </script>
 </body>
 </html>
