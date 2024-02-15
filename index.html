@@ -93,10 +93,7 @@
         };
     
     function displayMeal(mealArray) {
-        var mealDisplay = "";
-        mealArray.forEach(function(mealItem) {
-            mealDisplay += mealItem + "<br>"; // 각 항목을 <br>로 구분하여 세로로 출력
-        });
+        var mealDisplay = mealArray.join('<br>'); // 배열의 각 항목을 <br>로 구분하여 하나의 문자열로 결합
         return mealDisplay;
     }
     
@@ -106,8 +103,7 @@
         document.getElementById('meal').innerHTML = displayMeal(meal); 
     } else {
         document.getElementById('meal').innerText = '급식 없음';
-    }
-        
+    }      
     </script>
 </body>
 </html>
