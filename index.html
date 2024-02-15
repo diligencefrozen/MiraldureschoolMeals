@@ -93,17 +93,21 @@
         };
     
     function displayMeal(mealArray) {
-        var mealDisplay = mealArray.join('<br>'); // 배열의 각 항목을 <br>로 구분하여 하나의 문자열로 결합
+        var mealDisplay = "";
+        mealArray.forEach(function(item) {
+            mealDisplay += item + "<br>"; // 배열의 각 항목 뒤에 <br> 추가
+        });
         return mealDisplay;
     }
     
     var meal = mealList[today];
     
     if (meal) {
-        document.getElementById('meal').innerHTML = displayMeal(meal); 
+        document.getElementById('meal').innerHTML = displayMeal(meal); // innerHTML을 사용해 세로로 출력
     } else {
         document.getElementById('meal').innerText = '급식 없음';
-    }      
+    }
+        
     </script>
 </body>
 </html>
