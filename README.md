@@ -11,7 +11,7 @@ Information on meals at Miraldure School can be checked intuitively.
 # Purpose
 <li>My project aims to be more intuitive than the official site.<br/></li>
 
-<li>My project's ultimate goal is to offer the convenience of fast and easy access to information, anytime and anywhere.<br/></li>
+<li>My project's ultimate goal is to offer the convenience of fast and easy access to information, <br/>anytime and anywhere.<br/></li>
 
 # 피드백 및 제안
 급식 정보 추가, 수정 또는 기타 제안 사항이 있으신가요?<br/>
