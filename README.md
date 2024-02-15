@@ -6,4 +6,4 @@ Information on meals at Miraldure School can be checked intuitively.
 # Reference
 밀알두레학교 급식 데이터는 <a href="https://www.miraldure.com/Board/Index/30">매월 식단표 - 밀알두레학교</a>를 참고함. <br/>
 
-The source of the Milal Dure School meal data is the official <a href="https://www.miraldure.com/Board/Index/30">MiralDure School website</a>.
+The source of the Miraldure School meal data is the official <a href="https://www.miraldure.com/Board/Index/30">MiralDure School website</a>.
