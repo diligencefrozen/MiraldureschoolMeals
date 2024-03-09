@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="cp949">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="naver-site-verification" content="2bb536a9ff4fcb6758452235767f20b05574b028" />
+    <meta name="google-site-verification" content="c4eTxK6D1wFIOq01h8LLX02-f44HSO5gXqCsqGhr8AE" />
+    <meta name="description" content="밀알두레학교의 급식 식단표를 간단하게 확인할 수 있습니다.">
+    <meta name="author" content="Diligencefrozen">
+    <title>About - 밀알두레학교: 오늘의 급식</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #logo, nav a {
+            font-weight: bold;
+        }
+        h2, p {
+            font-weight: bold;
+            padding: 5px 0;
+            text-align: center;
+        }
+        #clock {
+            font-size: 4.5em; 
+        }
+        nav {
+            font-size: 1em;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+        #meal div, #meal span { /* 모든 급식 정보와 '급식 없음' 메시지에 적용 */
+            color: #999999;
+            margin: 5px 0;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <header>
+        <div id="logo">
+            About
+        </div>
+        <nav>
+            <a href="https://diligencefrozen.github.io/MiraldureschoolMeals/">Home</a>
+            <a href="https://diligencefrozen.github.io/MiraldureschoolMeals/about.html">About</a>
+            <a href="https://github.com/diligencefrozen/MiraldureschoolMeals/issues/new">Contact</a>
+        </nav>
+    </header>
+    
+    <h2 id="clock"></h2>
 
+    <p id="meal"></p>
+
+    <p id="client-ip"></p>
+
+
+</body>
+</html>
