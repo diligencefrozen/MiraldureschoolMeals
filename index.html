@@ -12,41 +12,52 @@
     <style>
         body {
             font-family: "Noto Sans KR", sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
         }
-        #title {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        #clock {
-            font-size: 1.5em;
-            margin-bottom: 20px;
+        #logo, nav a {
+            font-weight: bold;
         }
-        #meal {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #666;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+        h2, p {
+            font-weight: bold;
+            padding: 5px 0;
+            text-align: center;
         }
-        #client-ip {
-            color: #bbb2e9;
+        nav {
             font-size: 1em;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+        #meal div {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <h1 id="title"><a href="https://www.miraldure.com/Board/Index/30"><img src="https://github.com/diligencefrozen/MiraldureschoolMeals/blob/main/img/logo.jpg?raw=true" width="35" height="35"></a>&nbsp;오늘의 급식</h1>
-
+    <header>
+        <div id="logo">
+            밀알두레학교: 오늘의 급식
+        </div>
+        <nav>
+            <a href="https://diligencefrozen.github.io/MiraldureschoolMeals/">Home</a>
+            <a href="https://diligencefrozen.github.io/MiraldureschoolMeals/about.html">About</a>
+            <a href="https://github.com/diligencefrozen/MiraldureschoolMeals/issues/new">Contact</a>
+        </nav>
+    </header>
+    
     <h2 id="clock"></h2>
 
     <p id="meal"></p>
@@ -61,7 +72,7 @@
         document.body.removeChild(se);
 
         function callback(data) {
-            document.getElementById('client-ip').textContent = data.ip + ' 님, 방문하신 걸 환영합니다.';
+            document.getElementById('client-ip').textContent = data.ip + ' 님, 즐거운 점심 시간 되세요.';
         }
 
         // 시계 기능
@@ -70,7 +81,7 @@
             var h = timer.getHours();
             var m = timer.getMinutes();
             var s = timer.getSeconds();
-            document.getElementById('clock').innerHTML = h + "시" + m + "분" + s + "초";
+            document.getElementById('clock').innerHTML = h + "시 " + m + "분 " + s + "초";
         },1000);
 
         // 급식 정보 표시
@@ -145,6 +156,5 @@
     }
         
     </script>
-    
 </body>
 </html>
