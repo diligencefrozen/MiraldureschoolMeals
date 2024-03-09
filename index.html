@@ -33,6 +33,9 @@
             padding: 5px 0;
             text-align: center;
         }
+        #clock {
+            font-size: 4.5em; 
+        }
         nav {
             font-size: 1em;
         }
@@ -41,10 +44,13 @@
             color: #333;
             margin-left: 20px;
         }
-        #meal div {
+        #meal div, #meal span { /* 모든 급식 정보와 '급식 없음' 메시지에 적용 */
+            color: #999999;
             margin: 5px 0;
         }
     </style>
+    
+    
 </head>
 <body>
     <header>
@@ -140,20 +146,21 @@
         
         var meal = mealList[today];
 
-    
-    if (meal) {
-        var mealItems = meal.split(', '); 
-        var mealContainer = document.getElementById('meal');
-        mealContainer.innerHTML = ''; 
-        mealItems.forEach(function(item) {
-            var div = document.createElement('div'); 
-            div.textContent = item; 
-            div.classList.add('meal-item'); 
-            mealContainer.appendChild(div); 
-        });
-    } else {
-        document.getElementById('meal').innerText = '급식 없음';
-    }
+        if (meal) {
+            var mealItems = meal.split(', '); 
+            var mealContainer = document.getElementById('meal');
+            mealContainer.innerHTML = ''; 
+            mealItems.forEach(function(item) {
+                var div = document.createElement('div'); 
+                div.textContent = item; 
+                div.classList.add('meal-item'); 
+                mealContainer.appendChild(div); 
+            });
+        } else {
+            var mealContainer = document.getElementById('meal');
+            mealContainer.innerHTML = '<span style="color: #999999;">급식 없음</span>';
+        }
+
         
     </script>
 </body>
